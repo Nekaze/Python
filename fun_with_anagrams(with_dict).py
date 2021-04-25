@@ -7,11 +7,14 @@ def remove_anagrams(array):
     return(result.values())
 
 def normalize_and_clear_numbers(string):
-    if not string.isdigit():
-        return("".join(sorted(string.lower())))
+    try:
+        if not string.isdigit():
+            return("".join(sorted(string.lower())))
+    except:
+        pass
 
 def main():
-    strings = ['code', 'doce', 'ecod', 'framer', 'frame', 'fraem', 'sapo', 'sOpa']
+    strings = [1234, "1234", 'code', 'doce', 'ecod', 'framer', 'frame', 'fraem', 'sapo', 'sOpa']
     print(sorted(remove_anagrams(strings)))
 
 if __name__ == "__main__":
